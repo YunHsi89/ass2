@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>網頁範例</title>
+    <style>
+        /* 通用樣式 */
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* 禁止水平滾動 */
+        }
+
+        /* Banner樣式 */
+        #Banner {
+            width: 100%;
+            height: 100px; /* 將高度改為100px */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #3498db; /* 藍色背景 */
+            color: #fff;
+            font-size: 32px; /* 將文字放大成大標題大小 */
+        }
+
+        /* Nav樣式 */
+        #Nav {
+            background-color: #2ecc71; /* 綠色背景 */
+            text-align: center;
+            position: sticky; /* 粘性定位 */
+            top: 0;
+            z-index: 100; /* 提高堆疊順序，使 Nav 覆蓋在其他元素上方 */
+        }
+
+        /* 超連結樣式 */
+        #Nav a {
+            text-decoration: none;
+            color: #000;
+            padding: 5px; /* 更小的文字間距 */
+            font-size: 16px; /* 更小的文字大小 */
+            cursor: pointer; /* 添加游標指示 */
+        }
+
+        /* 區段1 Banner 樣式 */
+        #區段1-Banner {
+            background-color: #9b59b6; /* 紫色背景 */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 24px; /* 將文字放大成副標題大小 */
+        }
+
+        /* 區段1 內容 樣式 */
+        #區段1-內容 {
+            background-color: #333; /* 深灰色背景 */
+            height: 100vh;
+            display: flex;
+            flex-direction: column; /* 將內容區塊內容改成垂直排列 */
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 區段2 Banner 樣式 */
+        #區段2-Banner {
+            background-color: #34495e; /* 灰色背景 */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 24px; /* 將文字放大成副標題大小 */
+        }
+
+        /* 區段2 內容 樣式 */
+        #區段2-內容 {
+            background-color: #333; /* 深灰色背景 */
+            height: 100vh;
+            display: flex;
+            flex-direction: column; /* 將內容區塊內容改成垂直排列 */
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 區段3 Banner 樣式 */
+        #區段3-Banner {
+            background-color: #e74c3c; /* 紅色背景 */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 24px; /* 將文字放大成副標題大小 */
+        }
+
+        /* 區段3 內容 樣式 */
+        #區段3-內容 {
+            background-color: #333; /* 深灰色背景 */
+            height: 100vh;
+            display: flex;
+            flex-direction: column; /* 將內容區塊內容改成垂直排列 */
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 標題樣式 */
+        .標題 {
+            font-size: 24px; /* 標題文字大小 */
+            background-color: #ccc; /* 淺灰色背景 */
+            padding: 10px 20px; /* 調整內邊距 */
+        }
+
+        /* 內容樣式 */
+        .content {
+            font-size: 18px; /* 內容文字大小 */
+            margin-top: 10px; /* 上方間距 */
+            background-color: #ccc; /* 淺灰色背景 */
+            padding: 10px 20px; /* 調整內邊距 */
+        }
+
+        /* 內容中的小區塊樣式 */
+        .小區塊 {
+            background-color: #ccc; /* 淺灰色背景 */
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+            font-size: 18px; /* 將文字放大成比副標題小的大小 */
+        }
+    </style>
+</head>
+<body>
+    <!-- Banner 部分 -->
+    <div id="Banner">
+        Banner
+    </div>
+
+    <!-- Nav 部分 -->
+    <nav id="Nav">
+        <!-- 超連結到不同區塊的Banner，使用JavaScript實現平滑捲動 -->
+        <a href="#區段1-Banner" onclick="scrollToSection('#區段1-Banner')">區段1 Banner</a>
+        <a href="#區段2-Banner" onclick="scrollToSection('#區段2-Banner')">區段2 Banner</a>
+        <a href="#區段3-Banner" onclick="scrollToSection('#區段3-Banner')">區段3 Banner</a>
+    </nav>
+
+    <!-- 區段1 Banner 部分 -->
+    <div id="區段1-Banner">
+        區段1 Banner
+    </div>
+
+    <!-- 區段1 內容 部分 -->
+    <div id="區段1-內容">
+        <div class="標題">
+            區塊1 內容
+        </div>
+        <div class="content">
+            今天天氣好我吃麵包，享受陽光和微風，感覺非常愉快。
+        </div>
+        <div class="小區塊">
+            隨機內容 1
+        </div>
+    </div>
+
+    <!-- 區段2 Banner 部分 -->
+    <div id="區段2-Banner">
+        區段2 Banner
+    </div>
+
+    <!-- 區段2 內容 部分 -->
+    <div id="區段2-內容">
+        <div class="標題">
+            區塊2 內容
+        </div>
+        <div class="content">
+            隨機內容 2
+        </div>
+        <div class="小區塊">
+            隨機內容 2
+        </div>
+    </div>
+
+    <!-- 區段3 Banner 部分 -->
+    <div id="區段3-Banner">
+        區段3 Banner
+    </div>
+
+    <!-- 區段3 內容 部分 -->
+    <div id="區段3-內容">
+        <div class="標題">
+            區塊3 內容
+        </div>
+        <div class="content">
+            隨機內容 3
+        </div>
+        <div class="小區塊">
+            隨機內容 3
+        </div>
+    </div>
+
+    <script>
+        // JavaScript 函數實現平滑捲動
+        function scrollToSection(sectionId) {
+            const targetSection = document.querySelector(sectionId);
+            window.scrollTo({
+                top: targetSection.offsetTop - document.getElementById("Nav").offsetHeight,
+                behavior: "smooth" // 平滑捲動效果
+            });
+        }
+    </script>
+</body>
+</html>
